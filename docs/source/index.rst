@@ -1,16 +1,21 @@
-Twitter Scraper's documentation!
-===================================
+==============================================
+Welcome to the documentation of scrape_twitter!
+==============================================
 
-.. note::
-
-   This project is under active development.
-
-Contents
---------
-
+Index
+-----
 .. toctree::
+   :maxdepth: 1
 
-   about
-   documentation
-   authors
- 
+   01_about
+   02_source
+   03_authors
+   04_contributing
+
+   
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
