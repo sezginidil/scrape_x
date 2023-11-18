@@ -54,6 +54,4 @@ backup/*
 # plots
 *.png
 
-venv/
 venv
-.venv
