@@ -1,6 +1,7 @@
-"""Information about login.py file functions 
-
 """
+Information about login.py file functions
+"""
+
 
 def login(username: str, password: str) -> bool:
     """
