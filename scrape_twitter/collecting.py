@@ -4,7 +4,7 @@ from .schemas import (
 )
 
 
-def collect_trends(n:int) -> Json:
+def collect_trends(n: int) -> Json:
     """
     Args:
        n (int): maximum number of trends, which should be collected
