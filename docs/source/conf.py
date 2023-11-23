@@ -47,7 +47,9 @@ extensions = [
     'sphinx.ext.imgmath',
     'sphinx.ext.viewcode',
     'sphinx.ext.autosectionlabel',
-    'sphinx.ext.napoleon'
+    'sphinx.ext.napoleon',
+    'sphinxcontrib.autodoc_pydantic',
+
 ]
 
 # Add any paths that contain templates here, relative to this directory.
