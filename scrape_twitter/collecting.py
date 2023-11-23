@@ -12,4 +12,4 @@ def collect_trends(n: int) -> Json:
     Returns:
         Json: trends in json format.
     """
-    return Trends.model_dump(mode="json")
+    return Trends().model_dump(mode="json")
