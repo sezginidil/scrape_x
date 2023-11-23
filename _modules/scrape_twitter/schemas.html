@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>scrape_twitter.login &mdash; scrape_twitter 0.1.0 documentation</title>
+  <title>scrape_twitter.schemas &mdash; scrape_twitter 0.1.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
@@ -65,7 +65,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">scrape_twitter.login</li>
+      <li class="breadcrumb-item active">scrape_twitter.schemas</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -74,22 +74,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for scrape_twitter.login</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Information about login.py file functions</span>
-<span class="sd">&quot;&quot;&quot;</span>
+  <h1>Source code for scrape_twitter.schemas</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
 
+<div class="viewcode-block" id="Trend"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Trend">[docs]</a><span class="k">class</span> <span class="nc">Trend</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;User basic information, contains `id`, `username`, `fullname`, `profile_pic_url` and `is_verified`.&quot;&quot;&quot;</span>
+    <span class="n">header</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;category or location based&quot;</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Trending in (location)&quot;</span><span class="p">,</span> <span class="s2">&quot;(category) · Trending&quot;</span><span class="p">])</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;title of the trend&quot;</span><span class="p">)</span>
+    <span class="n">numnber_of_posts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Shows number of post under the category&quot;</span><span class="p">,</span> <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3,373 posts&quot;</span><span class="p">])</span></div>
 
-<div class="viewcode-block" id="login"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.login.login">[docs]</a><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Args:</span>
-<span class="sd">        username (str): username for login.</span>
-<span class="sd">        password (str): corresponding password for login.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        bool: True, if login successes; otherwise False.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="kc">True</span></div>
+<div class="viewcode-block" id="Trends"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Trends">[docs]</a><span class="k">class</span> <span class="nc">Trends</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation class to have the field `trends` for storing a list of instances of `Trend`.&quot;&quot;&quot;</span>
+    <span class="n">trends</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Trend</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                                <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A list of trends.&quot;</span><span class="p">,</span>
+                                <span class="n">examples</span><span class="o">=</span><span class="p">[[]])</span></div>
+                            
 </pre></div>
 
            </div>
