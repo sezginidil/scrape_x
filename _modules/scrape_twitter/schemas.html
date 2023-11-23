@@ -81,16 +81,17 @@
 
 <div class="viewcode-block" id="Trend"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Trend">[docs]</a><span class="k">class</span> <span class="nc">Trend</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Trends </span>
+<span class="sd">    Trends</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">header</span><span class="p">:</span><span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> 
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;category or location based&quot;</span><span class="p">,</span> 
-        <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Trending in (location)&quot;</span><span class="p">,</span> <span class="s2">&quot;(category) · Trending&quot;</span><span class="p">])</span>
-    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> 
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;title of the trend&quot;</span><span class="p">)</span>
-    <span class="n">number_of_posts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> 
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Shows number of post under the category&quot;</span><span class="p">,</span> 
-        <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3,373 posts&quot;</span><span class="p">])</span></div>
+    <span class="n">header</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;category or location based&quot;</span><span class="p">,</span>
+                        <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Trending in (location)&quot;</span><span class="p">,</span> <span class="s2">&quot;(category) · Trending&quot;</span><span class="p">])</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
+                       <span class="n">description</span><span class="o">=</span><span class="s2">&quot;title of the trend&quot;</span><span class="p">)</span>
+    <span class="n">number_of_posts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
+                                           <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Shows number of post under the category&quot;</span><span class="p">,</span>
+                                           <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3,373 posts&quot;</span><span class="p">])</span></div>
+
 
 <div class="viewcode-block" id="Trends"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Trends">[docs]</a><span class="k">class</span> <span class="nc">Trends</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation class containing list of instances of `Trend`.&quot;&quot;&quot;</span>
