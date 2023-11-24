@@ -5,7 +5,7 @@ Source
     :members:
     :noindex:
 
-..automodule:: scrape_twitter.collecting
+.. automodule:: scrape_twitter.collecting
     :members:
     :noindex:
 
