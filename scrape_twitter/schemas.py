@@ -29,14 +29,14 @@ class UserBasicInfo(BaseModel):
                             description="user's name, usually consists of first name and surname",
                             examples=["İdil Sezgin"])
     username: str = Field(...,
-                          description="4-15 characters"
-                          "Letters A-Z"
-                          "Numbers 0-9"
+                          description="4-15 characters "
+                          "Letters A-Z "
+                          "Numbers 0-9 "
                           "Underscore symbol")
     user_photo: str = Field(...,
                             description="Url of the user avatar."
                             " Never null, if no avatar was chosen its the anonymous profile photo")
-    user_bio: Optional[str] = Field(None,
+    user_bio: Optional[str] = Field(...,
                                     desctiption="0 - 160 characters"
                                     "Can contain @usernames, #hashtags and urls")
     private_account: bool = Field(False)
