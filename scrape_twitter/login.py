@@ -1,5 +1,5 @@
 """
-Information about login.py file functions
+Login function
 """
 
 
