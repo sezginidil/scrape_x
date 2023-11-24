@@ -12,4 +12,5 @@ def collect_trends(n: int) -> Json:
     Returns:
         Json: trends in json format.
     """
-    return Trends().model_dump(mode="json")
+    return Trends(trends=[{"header": "Trending in Munich",
+                           "title": "Python"}]).model_dump(mode="json")

@@ -4,12 +4,12 @@ from typing import List, Optional
 
 class Trend(BaseModel):
     """
-    Trends
+    Trend
     """
-    header: str = Field(None,
+    header: str = Field(...,
                         description="category or location based",
                         examples=["Trending in (location)", "(category) · Trending"])
-    title: str = Field(None,
+    title: str = Field(...,
                        description="title of the trend")
     number_of_posts: Optional[str] = Field(None,
                                            description="Shows number of post under the category",
