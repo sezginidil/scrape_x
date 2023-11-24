@@ -106,14 +106,14 @@
                             <span class="n">description</span><span class="o">=</span><span class="s2">&quot;user&#39;s name, usually consists of first name and surname&quot;</span><span class="p">,</span>
                             <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;İdil Sezgin&quot;</span><span class="p">])</span>
     <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
-                          <span class="n">description</span><span class="o">=</span><span class="s2">&quot;4-15 characters&quot;</span>
-                          <span class="s2">&quot;Letters A-Z&quot;</span>
-                          <span class="s2">&quot;Numbers 0-9&quot;</span>
+                          <span class="n">description</span><span class="o">=</span><span class="s2">&quot;4-15 characters &quot;</span>
+                          <span class="s2">&quot;Letters A-Z &quot;</span>
+                          <span class="s2">&quot;Numbers 0-9 &quot;</span>
                           <span class="s2">&quot;Underscore symbol&quot;</span><span class="p">)</span>
     <span class="n">user_photo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
                             <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Url of the user avatar.&quot;</span>
                             <span class="s2">&quot; Never null, if no avatar was chosen its the anonymous profile photo&quot;</span><span class="p">)</span>
-    <span class="n">user_bio</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">user_bio</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
                                     <span class="n">desctiption</span><span class="o">=</span><span class="s2">&quot;0 - 160 characters&quot;</span>
                                     <span class="s2">&quot;Can contain @usernames, #hashtags and urls&quot;</span><span class="p">)</span>
     <span class="n">private_account</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
