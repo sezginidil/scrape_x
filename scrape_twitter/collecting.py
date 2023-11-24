@@ -1,6 +1,6 @@
 from pydantic import Json
 from .schemas import (
-    Trends
+    Trend
 )
 
 
@@ -12,5 +12,4 @@ def collect_trends(n: int) -> Json:
     Returns:
         Json: trends in json format.
     """
-    return Trends(trends=[{"header": "Trending in Munich",
-                           "title": "Python"}]).model_dump(mode="json")
+    return Trend().model_dump(mode="json")
