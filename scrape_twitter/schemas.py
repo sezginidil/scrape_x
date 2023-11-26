@@ -1,3 +1,4 @@
+from xmlrpc.client import DateTime
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -45,3 +46,41 @@ class UserBasicInfo(BaseModel):
 
 class Users(BaseModel):
     users: List[UserBasicInfo] = Field(..., description="A list of users with basic info")
+
+
+class UserDetailedInfo(UserBasicInfo):
+    """All the information that can be collected from a profile"""
+    header_photo: Optional[str] = Field(..., description="Url of the header photo")
+    user_birth_date: Optional[str] = Field(..., description="User's birthday",
+                                           examples="Born September 13")
+    user_join_date: str = Field(..., description="User's join date to the platform",
+                                examples="Joined June 2015")
+    user_location: Optional[str] = Field(..., description="0-30 characters, could be any string")
+    user_website: Optional[str] = Field(..., description="website url")
+    number_of_followers: int = Field(None)
+    number_of_following: int = Field(None)
+    number_of_posts: int = Field(None)
+
+
+class BasicTweet(UserBasicInfo):
+    date: DateTime = Field(None)
+    text: str = Field(..., description="Max 280 characters")
+    hashtags: Optional[str] = Field(..., description="Hastag in the url form")
+    image: Optional[str] = Field(..., description="Image url")
+    number_of_replies: int = Field(None)
+    number_of_reposts: int = Field(None)
+    number_of_likes: int = Field(None)
+    number_of_views: int = Field(None)
+    social_content: Optional[str] = Field(..., description="Link to retweeter")
+    replyting_to: Optional[str] = Field(..., description="Hastag in the url form")
+
+
+class Tweet(BasicTweet):
+    quotes: Optional[BasicTweet] = Field(None)
+    replies: Optional[List[BasicTweet]] = Field(None)
+    reposts: Optional[List[UserBasicInfo]] = Field(None)
+    likes: Optional[List[UserBasicInfo]] = Field(None)
+
+
+class Tweets(BaseModel):
+    tweets: List[BasicTweet] = Field(..., description="A list of tweets")
