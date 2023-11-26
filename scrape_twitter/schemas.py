@@ -20,8 +20,7 @@ class Trend(BaseModel):
 class Trends(BaseModel):
     """An aggregation class containing list of instances of `Trend`."""
     trends: List[Trend] = Field(...,
-                                description="A list of trends.",
-                                examples=[[]])
+                                description="A list of trends.")
 
 
 class UserBasicInfo(BaseModel):
@@ -52,9 +51,9 @@ class UserDetailedInfo(UserBasicInfo):
     """All the information that can be collected from a profile"""
     header_photo: Optional[str] = Field(..., description="Url of the header photo")
     user_birth_date: Optional[str] = Field(..., description="User's birthday",
-                                           examples="Born September 13")
+                                           examples=["Born September 13"])
     user_join_date: str = Field(..., description="User's join date to the platform",
-                                examples="Joined June 2015")
+                                examples=["Joined June 2015"])
     user_location: Optional[str] = Field(..., description="0-30 characters, could be any string")
     user_website: Optional[str] = Field(..., description="website url")
     number_of_followers: int = Field(None)
