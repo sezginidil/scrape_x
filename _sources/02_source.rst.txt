@@ -26,13 +26,13 @@ schemas
 .. autopydantic_model:: scrape_twitter.schemas.Users
 
 .. autopydantic_model:: scrape_twitter.schemas.UserDetailedInfo
-    :inherited-members: UserBasicInfo
+    :inherited-members: BaseModel
 
 .. autopydantic_model:: scrape_twitter.schemas.BasicTweet
     :inherited-members: BaseModel
 
 .. autopydantic_model:: scrape_twitter.schemas.Tweet
-    :inherited-members: BasicTweet
+    :inherited-members: BaseModel
 
 .. autopydantic_model:: scrape_twitter.schemas.Tweets
 
