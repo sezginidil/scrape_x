@@ -1,12 +1,15 @@
 Source
 ======
 
-functions
-----------
+scrape_twitter.login
+---------------------
 
 .. automodule:: scrape_twitter.login
     :members:
     :noindex:
+
+scrape_twitter.collecting
+---------------------
 
 .. automodule:: scrape_twitter.collecting
     :members:

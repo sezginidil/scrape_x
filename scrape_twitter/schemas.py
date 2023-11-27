@@ -3,9 +3,7 @@ from typing import List, Optional
 
 
 class Trend(BaseModel):
-    """
-    Trend
-    """
+    """ Trend object """
     header: str = Field(...,
                         description="category or location based",
                         examples=["Trending in (location)", "(category) · Trending"])
@@ -43,6 +41,7 @@ class UserBasicInfo(BaseModel):
 
 
 class Users(BaseModel):
+    """An aggregation class containing list of instances of `UserBasicInfo`."""
     users: List[UserBasicInfo] = Field(..., description="A list of users with basic info")
 
 
@@ -61,6 +60,7 @@ class UserDetailedInfo(UserBasicInfo):
 
 
 class BasicTweet(BaseModel):
+    """Basic tweet information that can be collected without going to the tweet's url."""
     date: str = Field(..., description="When the tweet was created, in string form",
                       examples=["9:02 PM · Sep 3, 2023"])
     text: str = Field(..., description="Max 280 characters")
@@ -71,14 +71,16 @@ class BasicTweet(BaseModel):
     number_of_likes: int = Field(None)
     number_of_views: int = Field(None)
     social_content: Optional[str] = Field(..., description="Link to retweeter")
-    replyting_to: Optional[str] = Field(..., description="Hastag in the url form")
+    replyting_to: Optional[str] = Field(..., description="Link to replying user")
 
 
 class Tweets(BaseModel):
+    """An aggregation class containing list of instances of `BasicTweet`."""
     tweets: List[BasicTweet] = Field(..., description="A list of tweets")
 
 
 class Tweet(BaseModel):
+    """All the information that can be collected with a tweet id"""
     quotes: Optional[BasicTweet] = Field(None)
     replies: Optional[List[BasicTweet]] = Field(None)
     reposts: Optional[List[UserBasicInfo]] = Field(None)
