@@ -92,6 +92,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet"><code class="docutils literal notranslate"><span class="pre">BasicTweet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.date"><code class="docutils literal notranslate"><span class="pre">BasicTweet.date</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.hashtags"><code class="docutils literal notranslate"><span class="pre">BasicTweet.hashtags</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.image"><code class="docutils literal notranslate"><span class="pre">BasicTweet.image</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.number_of_likes"><code class="docutils literal notranslate"><span class="pre">BasicTweet.number_of_likes</span></code></a></li>
@@ -101,6 +102,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.replyting_to"><code class="docutils literal notranslate"><span class="pre">BasicTweet.replyting_to</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.social_content"><code class="docutils literal notranslate"><span class="pre">BasicTweet.social_content</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.text"><code class="docutils literal notranslate"><span class="pre">BasicTweet.text</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#scrape_twitter.schemas.Tweet"><code class="docutils literal notranslate"><span class="pre">Tweet</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.Tweet.likes"><code class="docutils literal notranslate"><span class="pre">Tweet.likes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.Tweet.quotes"><code class="docutils literal notranslate"><span class="pre">Tweet.quotes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.Tweet.replies"><code class="docutils literal notranslate"><span class="pre">Tweet.replies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.Tweet.reposts"><code class="docutils literal notranslate"><span class="pre">Tweet.reposts</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#scrape_twitter.schemas.Tweets"><code class="docutils literal notranslate"><span class="pre">Tweets</span></code></a><ul>
@@ -260,6 +268,23 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>trends in json format.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Json</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">collect_tweet_with_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Json</span></span></span><a class="reference internal" href="_modules/scrape_twitter/collecting.html#collect_tweet_with_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Collect all information related to given tweet id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username of the user.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>detailed tweet object</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Json</p>
@@ -976,6 +1001,14 @@
 <span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BasicTweet&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;When the tweet was created, in string form&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;examples&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;9:02 PM \u00b7 Sep 3, 2023&quot;</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">      </span><span class="p">},</span>
 <span class="w">      </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Max 280 characters&quot;</span><span class="p">,</span>
 <span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Text&quot;</span><span class="p">,</span>
@@ -1051,6 +1084,7 @@
 <span class="w">      </span><span class="p">}</span>
 <span class="w">   </span><span class="p">},</span>
 <span class="w">   </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="s2">&quot;hashtags&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
@@ -1063,6 +1097,7 @@
 </details></p><dl class="field-list simple">
 <dt class="field-odd">Fields<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.date" title="scrape_twitter.schemas.BasicTweet.date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date</span> <span class="pre">(str)</span></code></a></p></li>
 <li><p><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.hashtags" title="scrape_twitter.schemas.BasicTweet.hashtags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hashtags</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
 <li><p><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.image" title="scrape_twitter.schemas.BasicTweet.image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">image</span> <span class="pre">(str</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
 <li><p><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet.number_of_likes" title="scrape_twitter.schemas.BasicTweet.number_of_likes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number_of_likes</span> <span class="pre">(int)</span></code></a></p></li>
@@ -1075,6 +1110,12 @@
 </ul>
 </dd>
 </dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="scrape_twitter.schemas.BasicTweet.date">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">date</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#scrape_twitter.schemas.BasicTweet.date" title="Permalink to this definition"></a></dt>
+<dd><p>When the tweet was created, in string form</p>
+</dd></dl>
+
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="scrape_twitter.schemas.BasicTweet.hashtags">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hashtags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#scrape_twitter.schemas.BasicTweet.hashtags" title="Permalink to this definition"></a></dt>
@@ -1128,25 +1169,81 @@
 </dd></dl>
 
 <dl class="py class pydantic_model">
-<dt class="sig sig-object py" id="scrape_twitter.schemas.Tweets">
-<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tweets</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#Tweets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.Tweets" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="scrape_twitter.schemas.Tweet">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tweet</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#Tweet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.Tweet" title="Permalink to this definition"></a></dt>
 <dd><p><details  class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tweets&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tweet&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;tweets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A list of tweets&quot;</span><span class="p">,</span>
-<span class="w">         </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/BasicTweet&quot;</span>
-<span class="w">         </span><span class="p">},</span>
-<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tweets&quot;</span><span class="p">,</span>
-<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">      </span><span class="nt">&quot;quotes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/BasicTweet&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;replies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/BasicTweet&quot;</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replies&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;reposts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/UserBasicInfo&quot;</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reposts&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;likes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/UserBasicInfo&quot;</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Likes&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">   </span><span class="p">},</span>
 <span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;BasicTweet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;When the tweet was created, in string form&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;examples&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">&quot;9:02 PM \u00b7 Sep 3, 2023&quot;</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
 <span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Max 280 characters&quot;</span><span class="p">,</span>
 <span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Text&quot;</span><span class="p">,</span>
@@ -1222,6 +1319,209 @@
 <span class="w">            </span><span class="p">}</span>
 <span class="w">         </span><span class="p">},</span>
 <span class="w">         </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;hashtags&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;social_content&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;replyting_to&quot;</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BasicTweet&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;UserBasicInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic user information that can be collected without going to the profile of the user&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;given_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user&#39;s name, usually consists of first name and surname&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;examples&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">&quot;\u0130dil Sezgin&quot;</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Given Name&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4-15 characters Letters A-Z Numbers 0-9 Underscore symbol&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Username&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;user_photo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Url of the user avatar. Never null, if no avatar was chosen its the anonymous profile photo&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User Photo&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;user_bio&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;desctiption&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0 - 160 charactersCan contain @usernames, #hashtags and urls&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;User Bio&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;private_account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Private Account&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;verified_account&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Verified Account&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;boolean&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;given_name&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;username&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;user_photo&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;user_bio&quot;</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UserBasicInfo&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</details></p><dl class="field-list simple">
+<dt class="field-odd">Fields<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#scrape_twitter.schemas.Tweet.likes" title="scrape_twitter.schemas.Tweet.likes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">likes</span> <span class="pre">(List[scrape_twitter.schemas.UserBasicInfo]</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#scrape_twitter.schemas.Tweet.quotes" title="scrape_twitter.schemas.Tweet.quotes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quotes</span> <span class="pre">(scrape_twitter.schemas.BasicTweet</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#scrape_twitter.schemas.Tweet.replies" title="scrape_twitter.schemas.Tweet.replies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replies</span> <span class="pre">(List[scrape_twitter.schemas.BasicTweet]</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+<li><p><a class="reference internal" href="#scrape_twitter.schemas.Tweet.reposts" title="scrape_twitter.schemas.Tweet.reposts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reposts</span> <span class="pre">(List[scrape_twitter.schemas.UserBasicInfo]</span> <span class="pre">|</span> <span class="pre">None)</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="scrape_twitter.schemas.Tweet.likes">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">likes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scrape_twitter.schemas.UserBasicInfo" title="scrape_twitter.schemas.UserBasicInfo"><span class="pre">UserBasicInfo</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scrape_twitter.schemas.Tweet.likes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="scrape_twitter.schemas.Tweet.quotes">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quotes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet" title="scrape_twitter.schemas.BasicTweet"><span class="pre">BasicTweet</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scrape_twitter.schemas.Tweet.quotes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="scrape_twitter.schemas.Tweet.replies">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">replies</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scrape_twitter.schemas.BasicTweet" title="scrape_twitter.schemas.BasicTweet"><span class="pre">BasicTweet</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scrape_twitter.schemas.Tweet.replies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute pydantic_field">
+<dt class="sig sig-object py" id="scrape_twitter.schemas.Tweet.reposts">
+<em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">reposts</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.12)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#scrape_twitter.schemas.UserBasicInfo" title="scrape_twitter.schemas.UserBasicInfo"><span class="pre">UserBasicInfo</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#scrape_twitter.schemas.Tweet.reposts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class pydantic_model">
+<dt class="sig sig-object py" id="scrape_twitter.schemas.Tweets">
+<em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tweets</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#Tweets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.Tweets" title="Permalink to this definition"></a></dt>
+<dd><p><details  class="autodoc_pydantic_collapsable_json">
+<summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tweets&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tweets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A list of tweets&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;$ref&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;#/$defs/BasicTweet&quot;</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tweets&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;BasicTweet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;When the tweet was created, in string form&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;examples&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="s2">&quot;9:02 PM \u00b7 Sep 3, 2023&quot;</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Date&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Max 280 characters&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Text&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;hashtags&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hastag in the url form&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hashtags&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Image url&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Image&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;number_of_replies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number Of Replies&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;number_of_reposts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number Of Reposts&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;number_of_likes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number Of Likes&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;number_of_views&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Number Of Views&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integer&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;social_content&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Link to retweeter&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Social Content&quot;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;replyting_to&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;anyOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">],</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hastag in the url form&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replyting To&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;date&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="s2">&quot;hashtags&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="s2">&quot;image&quot;</span><span class="p">,</span>
