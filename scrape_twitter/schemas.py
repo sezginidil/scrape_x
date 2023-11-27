@@ -1,4 +1,3 @@
-import datetime
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -62,7 +61,6 @@ class UserDetailedInfo(UserBasicInfo):
 
 
 class BasicTweet(BaseModel):
-    date: datetime = Field(None)
     text: str = Field(..., description="Max 280 characters")
     hashtags: Optional[str] = Field(..., description="Hastag in the url form")
     image: Optional[str] = Field(..., description="Image url")
