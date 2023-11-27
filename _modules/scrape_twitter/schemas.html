@@ -80,9 +80,7 @@
 
 
 <div class="viewcode-block" id="Trend"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Trend">[docs]</a><span class="k">class</span> <span class="nc">Trend</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Trend</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Trend object &quot;&quot;&quot;</span>
     <span class="n">header</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
                         <span class="n">description</span><span class="o">=</span><span class="s2">&quot;category or location based&quot;</span><span class="p">,</span>
                         <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Trending in (location)&quot;</span><span class="p">,</span> <span class="s2">&quot;(category) · Trending&quot;</span><span class="p">])</span>
@@ -120,6 +118,7 @@
 
 
 <div class="viewcode-block" id="Users"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Users">[docs]</a><span class="k">class</span> <span class="nc">Users</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation class containing list of instances of `UserBasicInfo`.&quot;&quot;&quot;</span>
     <span class="n">users</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UserBasicInfo</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A list of users with basic info&quot;</span><span class="p">)</span></div>
 
 
@@ -138,6 +137,7 @@
 
 
 <div class="viewcode-block" id="BasicTweet"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.BasicTweet">[docs]</a><span class="k">class</span> <span class="nc">BasicTweet</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Basic tweet information that can be collected without going to the tweet&#39;s url.&quot;&quot;&quot;</span>
     <span class="n">date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;When the tweet was created, in string form&quot;</span><span class="p">,</span>
                       <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;9:02 PM · Sep 3, 2023&quot;</span><span class="p">])</span>
     <span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Max 280 characters&quot;</span><span class="p">)</span>
@@ -148,14 +148,16 @@
     <span class="n">number_of_likes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">number_of_views</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">social_content</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Link to retweeter&quot;</span><span class="p">)</span>
-    <span class="n">replyting_to</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Hastag in the url form&quot;</span><span class="p">)</span></div>
+    <span class="n">replyting_to</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Link to replying user&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tweets"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Tweets">[docs]</a><span class="k">class</span> <span class="nc">Tweets</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation class containing list of instances of `BasicTweet`.&quot;&quot;&quot;</span>
     <span class="n">tweets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">BasicTweet</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A list of tweets&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tweet"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Tweet">[docs]</a><span class="k">class</span> <span class="nc">Tweet</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;All the information that can be collected with a tweet id&quot;&quot;&quot;</span>
     <span class="n">quotes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">BasicTweet</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">replies</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">BasicTweet</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">reposts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">UserBasicInfo</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>

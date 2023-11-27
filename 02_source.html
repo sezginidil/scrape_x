@@ -49,7 +49,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="01_about.html">Scrape_Twitter</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Source</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#functions">functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scrape-twitter-login">scrape_twitter.login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scrape-twitter-collecting">scrape_twitter.collecting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#schemas">schemas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#scrape_twitter.schemas.Trend"><code class="docutils literal notranslate"><span class="pre">Trend</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#scrape_twitter.schemas.Trend.header"><code class="docutils literal notranslate"><span class="pre">Trend.header</span></code></a></li>
@@ -149,17 +150,26 @@
              
   <section id="source">
 <h1>Source<a class="headerlink" href="#source" title="Permalink to this heading"></a></h1>
-<section id="functions">
-<h2>functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
-<p>Login function</p>
+<section id="scrape-twitter-login">
+<h2>scrape_twitter.login<a class="headerlink" href="#scrape-twitter-login" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="_modules/scrape_twitter/login.html#login"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username for login.</p></li>
-<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – corresponding password for login.</p></li>
+<li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username for login</p></li>
+<li><p><strong>·String</strong> – </p></li>
+<li><p><strong>characters</strong> (<em>at least 10</em>) – </p></li>
+<li><p><strong>A-Z</strong> (<em>·Letters</em>) – </p></li>
+<li><p><strong>0-9</strong> (<em>numbers</em>) – </p></li>
+<li><p><strong>symbol</strong> (<em>and underscore</em>) – </p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – corresponding password for login</p></li>
+<li><p><strong>·String</strong> – </p></li>
+<li><p><strong>characters</strong> – </p></li>
+<li><p><strong>case</strong> (<em>lower</em>) – </p></li>
+<li><p><strong>case</strong> – </p></li>
+<li><p><strong>symbols</strong> (<em>number and</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -171,6 +181,9 @@
 </dl>
 </dd></dl>
 
+</section>
+<section id="scrape-twitter-collecting">
+<h2>scrape_twitter.collecting<a class="headerlink" href="#scrape-twitter-collecting" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">collect_followers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Json</span></span></span><a class="reference internal" href="_modules/scrape_twitter/collecting.html#collect_followers"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
@@ -397,11 +410,11 @@
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="scrape_twitter.schemas.Trend">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Trend</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#Trend"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.Trend" title="Permalink to this definition"></a></dt>
-<dd><p>Trend</p>
+<dd><p>Trend object</p>
 <p><details  class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trend&quot;</span><span class="p">,</span>
-<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trend&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trend object &quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;header&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -492,7 +505,7 @@
 <span class="w">   </span><span class="p">},</span>
 <span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;Trend&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trend&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trend object &quot;</span><span class="p">,</span>
 <span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;header&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;category or location based&quot;</span><span class="p">,</span>
@@ -664,9 +677,11 @@
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="scrape_twitter.schemas.Users">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Users</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#Users"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.Users" title="Permalink to this definition"></a></dt>
-<dd><p><details  class="autodoc_pydantic_collapsable_json">
+<dd><p>An aggregation class containing list of instances of <cite>UserBasicInfo</cite>.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Users&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An aggregation class containing list of instances of `UserBasicInfo`.&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;users&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -996,9 +1011,11 @@
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="scrape_twitter.schemas.BasicTweet">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BasicTweet</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#BasicTweet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.BasicTweet" title="Permalink to this definition"></a></dt>
-<dd><p><details  class="autodoc_pydantic_collapsable_json">
+<dd><p>Basic tweet information that can be collected without going to the tweet’s url.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BasicTweet&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic tweet information that can be collected without going to the tweet&#39;s url.&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1079,7 +1096,7 @@
 <span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">         </span><span class="p">],</span>
-<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hastag in the url form&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Link to replying user&quot;</span><span class="p">,</span>
 <span class="w">         </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replyting To&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">   </span><span class="p">},</span>
@@ -1151,7 +1168,7 @@
 <dl class="py attribute pydantic_field">
 <dt class="sig sig-object py" id="scrape_twitter.schemas.BasicTweet.replyting_to">
 <em class="property"><span class="pre">field</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">replyting_to</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></em><em class="property"> <span class="pre">[Required]</span></em><a class="headerlink" href="#scrape_twitter.schemas.BasicTweet.replyting_to" title="Permalink to this definition"></a></dt>
-<dd><p>Hastag in the url form</p>
+<dd><p>Link to replying user</p>
 </dd></dl>
 
 <dl class="py attribute pydantic_field">
@@ -1171,9 +1188,11 @@
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="scrape_twitter.schemas.Tweet">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tweet</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#Tweet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.Tweet" title="Permalink to this definition"></a></dt>
-<dd><p><details  class="autodoc_pydantic_collapsable_json">
+<dd><p>All the information that can be collected with a tweet id</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tweet&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;All the information that can be collected with a tweet id&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;quotes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1235,6 +1254,7 @@
 <span class="w">   </span><span class="p">},</span>
 <span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;BasicTweet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic tweet information that can be collected without going to the tweet&#39;s url.&quot;</span><span class="p">,</span>
 <span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;When the tweet was created, in string form&quot;</span><span class="p">,</span>
@@ -1314,7 +1334,7 @@
 <span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
 <span class="w">                  </span><span class="p">}</span>
 <span class="w">               </span><span class="p">],</span>
-<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hastag in the url form&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Link to replying user&quot;</span><span class="p">,</span>
 <span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replyting To&quot;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">         </span><span class="p">},</span>
@@ -1421,9 +1441,11 @@
 <dl class="py class pydantic_model">
 <dt class="sig sig-object py" id="scrape_twitter.schemas.Tweets">
 <em class="property"><span class="pre">pydantic</span> <span class="pre">model</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tweets</span></span><a class="reference internal" href="_modules/scrape_twitter/schemas.html#Tweets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scrape_twitter.schemas.Tweets" title="Permalink to this definition"></a></dt>
-<dd><p><details  class="autodoc_pydantic_collapsable_json">
+<dd><p>An aggregation class containing list of instances of <cite>BasicTweet</cite>.</p>
+<p><details  class="autodoc_pydantic_collapsable_json">
 <summary>Show JSON schema</summary><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tweets&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An aggregation class containing list of instances of `BasicTweet`.&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;tweets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1437,6 +1459,7 @@
 <span class="w">   </span><span class="p">},</span>
 <span class="w">   </span><span class="nt">&quot;$defs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;BasicTweet&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Basic tweet information that can be collected without going to the tweet&#39;s url.&quot;</span><span class="p">,</span>
 <span class="w">         </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;When the tweet was created, in string form&quot;</span><span class="p">,</span>
@@ -1516,7 +1539,7 @@
 <span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;null&quot;</span>
 <span class="w">                  </span><span class="p">}</span>
 <span class="w">               </span><span class="p">],</span>
-<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hastag in the url form&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Link to replying user&quot;</span><span class="p">,</span>
 <span class="w">               </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Replyting To&quot;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">         </span><span class="p">},</span>
