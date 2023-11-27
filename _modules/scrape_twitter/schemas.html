@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scrape_twitter.schemas &mdash; scrape_twitter 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/autodoc_pydantic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=2389946f"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            scrape_twitter
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../01_about.html">Scrape_Twitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_source.html">Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03_authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04_contributing.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scrape_twitter</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">scrape_twitter.schemas</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for scrape_twitter.schemas</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+
+<div class="viewcode-block" id="Trend"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Trend">[docs]</a><span class="k">class</span> <span class="nc">Trend</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Trend</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">header</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;category or location based&quot;</span><span class="p">,</span>
+                        <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Trending in (location)&quot;</span><span class="p">,</span> <span class="s2">&quot;(category) · Trending&quot;</span><span class="p">])</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                       <span class="n">description</span><span class="o">=</span><span class="s2">&quot;title of the trend&quot;</span><span class="p">)</span>
+    <span class="n">number_of_posts</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span>
+                                           <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Shows number of post under the category&quot;</span><span class="p">,</span>
+                                           <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;3,373 posts&quot;</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Trends"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Trends">[docs]</a><span class="k">class</span> <span class="nc">Trends</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation class containing list of instances of `Trend`.&quot;&quot;&quot;</span>
+    <span class="n">trends</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Trend</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                                <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A list of trends.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UserBasicInfo"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.UserBasicInfo">[docs]</a><span class="k">class</span> <span class="nc">UserBasicInfo</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Basic user information that can be collected without going to the profile of the user&quot;&quot;&quot;</span>
+    <span class="n">given_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;user&#39;s name, usually consists of first name and surname&quot;</span><span class="p">,</span>
+                            <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;İdil Sezgin&quot;</span><span class="p">])</span>
+    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                          <span class="n">description</span><span class="o">=</span><span class="s2">&quot;4-15 characters &quot;</span>
+                          <span class="s2">&quot;Letters A-Z &quot;</span>
+                          <span class="s2">&quot;Numbers 0-9 &quot;</span>
+                          <span class="s2">&quot;Underscore symbol&quot;</span><span class="p">)</span>
+    <span class="n">user_photo</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                            <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Url of the user avatar.&quot;</span>
+                            <span class="s2">&quot; Never null, if no avatar was chosen its the anonymous profile photo&quot;</span><span class="p">)</span>
+    <span class="n">user_bio</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
+                                    <span class="n">desctiption</span><span class="o">=</span><span class="s2">&quot;0 - 160 characters&quot;</span>
+                                    <span class="s2">&quot;Can contain @usernames, #hashtags and urls&quot;</span><span class="p">)</span>
+    <span class="n">private_account</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">verified_account</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Users"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.Users">[docs]</a><span class="k">class</span> <span class="nc">Users</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">users</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">UserBasicInfo</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A list of users with basic info&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UserDetailedInfo"><a class="viewcode-back" href="../../02_source.html#scrape_twitter.schemas.UserDetailedInfo">[docs]</a><span class="k">class</span> <span class="nc">UserDetailedInfo</span><span class="p">(</span><span class="n">UserBasicInfo</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;All the information that can be collected from a profile&quot;&quot;&quot;</span>
+    <span class="n">header_photo</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Url of the header photo&quot;</span><span class="p">)</span>
+    <span class="n">user_birth_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;User&#39;s birthday&quot;</span><span class="p">,</span>
+                                           <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Born September 13&quot;</span><span class="p">])</span>
+    <span class="n">user_join_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;User&#39;s join date to the platform&quot;</span><span class="p">,</span>
+                                <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Joined June 2015&quot;</span><span class="p">])</span>
+    <span class="n">user_location</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;0-30 characters, could be any string&quot;</span><span class="p">)</span>
+    <span class="n">user_website</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;website url&quot;</span><span class="p">)</span>
+    <span class="n">number_of_followers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">number_of_following</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">number_of_posts</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span></div>
+
+<span class="c1"># class BasicTweet(BaseModel):</span>
+<span class="c1">#     date: DateTime = Field(None)</span>
+<span class="c1">#     text: str = Field(..., description=&quot;Max 280 characters&quot;)</span>
+<span class="c1">#     hashtags: Optional[str] = Field(..., description=&quot;Hastag in the url form&quot;)</span>
+<span class="c1">#     image: Optional[str] = Field(..., description=&quot;Image url&quot;)</span>
+<span class="c1">#     number_of_replies: int = Field(None)</span>
+<span class="c1">#     number_of_reposts: int = Field(None)</span>
+<span class="c1">#     number_of_likes: int = Field(None)</span>
+<span class="c1">#     number_of_views: int = Field(None)</span>
+<span class="c1">#     social_content: Optional[str] = Field(..., description=&quot;Link to retweeter&quot;)</span>
+<span class="c1">#     replyting_to: Optional[str] = Field(..., description=&quot;Hastag in the url form&quot;)</span>
+
+
+<span class="c1"># class Tweet(BaseModel):</span>
+<span class="c1">#     quotes: Optional[BasicTweet] = Field(None)</span>
+<span class="c1">#     replies: Optional[List[BasicTweet]] = Field(None)</span>
+<span class="c1">#     reposts: Optional[List[UserBasicInfo]] = Field(None)</span>
+<span class="c1">#     likes: Optional[List[UserBasicInfo]] = Field(None)</span>
+
+
+<span class="c1"># class Tweets(BaseModel):</span>
+<span class="c1">#     tweets: List[BasicTweet] = Field(..., description=&quot;A list of tweets&quot;)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Idil Sezgin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
