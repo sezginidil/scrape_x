@@ -61,6 +61,8 @@ class UserDetailedInfo(UserBasicInfo):
 
 
 class BasicTweet(BaseModel):
+    date: str = Field(..., description="When the tweet was created, in string form",
+                      examples=["9:02 PM · Sep 3, 2023"])
     text: str = Field(..., description="Max 280 characters")
     hashtags: Optional[str] = Field(..., description="Hastag in the url form")
     image: Optional[str] = Field(..., description="Image url")
@@ -75,8 +77,9 @@ class BasicTweet(BaseModel):
 class Tweets(BaseModel):
     tweets: List[BasicTweet] = Field(..., description="A list of tweets")
 
-# class Tweet(BaseModel):
-#     quotes: Optional[BasicTweet] = Field(None)
-#     replies: Optional[List[BasicTweet]] = Field(None)
-#     reposts: Optional[List[UserBasicInfo]] = Field(None)
-#     likes: Optional[List[UserBasicInfo]] = Field(None)
+
+class Tweet(BaseModel):
+    quotes: Optional[BasicTweet] = Field(None)
+    replies: Optional[List[BasicTweet]] = Field(None)
+    reposts: Optional[List[UserBasicInfo]] = Field(None)
+    likes: Optional[List[UserBasicInfo]] = Field(None)
