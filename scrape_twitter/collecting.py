@@ -21,7 +21,7 @@ def collect_followers(username: str, n: int = 100) -> Json:
     Args:
         username (str): username of the user.
         n (int): maximum number of followers, which should be collected. By default,
-        it's 100. If it's set to 0, collect all followers.
+         it's 100. If it's set to 0, collect all followers.
 
     Returns:
        Json: basic followers' information of the given user in json format.
@@ -35,7 +35,7 @@ def collect_following(username: str, n: int = 100) -> Json:
     Args:
         username (str): username of the user.
         n (int): maximum number of following, which should be collected. By default,
-        it's 100. If it's set to 0, collect all following.
+         it's 100. If it's set to 0, collect all following.
 
     Returns:
         Json: basic following' information of the given user in json format.
@@ -74,7 +74,7 @@ def collect_tweets_of_user(username: str, n: int = 100) -> Json:
     Args:
         username (str): username of the user.
         n (int): maximum number of tweets, which should be collected. By default,
-        it's 100. If it's set to 0, collect all tweets.
+         it's 100. If it's set to 0, collect all tweets.
 
     Returns:
         Json: tweet objects in json format.
@@ -88,7 +88,7 @@ def collect_media_of_user(username: str, n: int = 100) -> Json:
     Args:
         username (str): username of the user.
         n (int): maximum number of tweets, which should be collected. By default,
-        it's 100. If it's set to 0, collect all tweets.
+         it's 100. If it's set to 0, collect all tweets.
 
     Returns:
         Json: tweet objects with media in json format.
@@ -102,7 +102,7 @@ def collect_likes_of_user(username: str, n: int = 100) -> Json:
     Args:
         username (str): username of the user.
         n (int): maximum number of tweets, which should be collected. By default,
-        it's 100. If it's set to 0, collect all tweets.
+         it's 100. If it's set to 0, collect all tweets.
 
     Returns:
         Json: tweet objects with media in json format.
