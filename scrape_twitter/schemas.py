@@ -61,7 +61,7 @@ class UserDetailedInfo(UserBasicInfo):
     number_of_posts: int = Field(None)
 
 
-class BasicTweet(UserBasicInfo):
+class BasicTweet(BaseModel):
     date: DateTime = Field(None)
     text: str = Field(..., description="Max 280 characters")
     hashtags: Optional[str] = Field(..., description="Hastag in the url form")
@@ -74,7 +74,7 @@ class BasicTweet(UserBasicInfo):
     replyting_to: Optional[str] = Field(..., description="Hastag in the url form")
 
 
-class Tweet(BasicTweet):
+class Tweet(BaseModel):
     quotes: Optional[BasicTweet] = Field(None)
     replies: Optional[List[BasicTweet]] = Field(None)
     reposts: Optional[List[UserBasicInfo]] = Field(None)
