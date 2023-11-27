@@ -158,18 +158,10 @@
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username for login</p></li>
-<li><p><strong>·String</strong> – </p></li>
-<li><p><strong>characters</strong> (<em>at least 10</em>) – </p></li>
-<li><p><strong>A-Z</strong> (<em>·Letters</em>) – </p></li>
-<li><p><strong>0-9</strong> (<em>numbers</em>) – </p></li>
-<li><p><strong>symbol</strong> (<em>and underscore</em>) – </p></li>
-<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – corresponding password for login</p></li>
-<li><p><strong>·String</strong> – </p></li>
-<li><p><strong>characters</strong> – </p></li>
-<li><p><strong>case</strong> (<em>lower</em>) – </p></li>
-<li><p><strong>case</strong> – </p></li>
-<li><p><strong>symbols</strong> (<em>number and</em>) – </p></li>
+<li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username for login. 4 to 15 characters, letters A to Z,
+numbers 0 to 9, and underscore symbol</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – corresponding password for login. At least 10 characters
+Mix of upper case, lower case, number and symbols</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -192,9 +184,8 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username of the user.</p></li>
-<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of followers, which should be collected. By default,</p></li>
-<li><p><strong>0</strong> (<em>it's 100. If it's set to</em>) – </p></li>
-<li><p><strong>followers.</strong> (<em>collect all</em>) – </p></li>
+<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of followers, which should be collected. By default,
+it’s 100. If it’s set to 0, collect all followers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -214,9 +205,8 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username of the user.</p></li>
-<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of following, which should be collected. By default,</p></li>
-<li><p><strong>0</strong> (<em>it's 100. If it's set to</em>) – </p></li>
-<li><p><strong>following.</strong> (<em>collect all</em>) – </p></li>
+<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of following, which should be collected. By default,
+it’s 100. If it’s set to 0, collect all following.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -236,9 +226,8 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username of the user.</p></li>
-<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of tweets, which should be collected. By default,</p></li>
-<li><p><strong>0</strong> (<em>it's 100. If it's set to</em>) – </p></li>
-<li><p><strong>tweets.</strong> (<em>collect all</em>) – </p></li>
+<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of tweets, which should be collected. By default,
+it’s 100. If it’s set to 0, collect all tweets.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -258,9 +247,8 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username of the user.</p></li>
-<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of tweets, which should be collected. By default,</p></li>
-<li><p><strong>0</strong> (<em>it's 100. If it's set to</em>) – </p></li>
-<li><p><strong>tweets.</strong> (<em>collect all</em>) – </p></li>
+<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of tweets, which should be collected. By default,
+it’s 100. If it’s set to 0, collect all tweets.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -313,9 +301,8 @@
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>username</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><em>str</em></a>) – username of the user.</p></li>
-<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of tweets, which should be collected. By default,</p></li>
-<li><p><strong>0</strong> (<em>it's 100. If it's set to</em>) – </p></li>
-<li><p><strong>tweets.</strong> (<em>collect all</em>) – </p></li>
+<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><em>int</em></a>) – maximum number of tweets, which should be collected. By default,
+it’s 100. If it’s set to 0, collect all tweets.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
