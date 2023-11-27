@@ -1,6 +1,6 @@
 from pydantic import Json
 from .schemas import (
-    Trends, Tweets, Users, UserDetailedInfo, Tweet
+    Trends, Users, UserDetailedInfo,
 )
 
 
@@ -67,82 +67,81 @@ def collect_user_info(username: str) -> Json:
     """
     return UserDetailedInfo().model_dump(mode="json")
 
+# def collect_tweets_of_user(username: str, n: int = 100) -> Json:
+#     """ Collect n tweets of the given user.
 
-def collect_tweets_of_user(username: str, n: int = 100) -> Json:
-    """ Collect n tweets of the given user.
+#     Args:
+#         username (str): username of the user.
+#         n (int): maximum number of tweets, which should be collected. By default,
+#         it's 100. If it's set to 0, collect all tweets.
 
-    Args:
-        username (str): username of the user.
-        n (int): maximum number of tweets, which should be collected. By default,
-        it's 100. If it's set to 0, collect all tweets.
-
-    Returns:
-        Json: tweet objects in json format.
-    """
-    return Tweets().model_dump(mode="json")
-
-
-def collect_media_of_user(username: str, n: int = 100) -> Json:
-    """ Collect n tweets of the given user with media.
-
-    Args:
-        username (str): username of the user.
-        n (int): maximum number of tweets, which should be collected. By default,
-        it's 100. If it's set to 0, collect all tweets.
-
-    Returns:
-        Json: tweet objects with media in json format.
-    """
-    return Tweets().model_dump(mode="json")
+#     Returns:
+#         Json: tweet objects in json format.
+#     """
+#     return Tweets().model_dump(mode="json")
 
 
-def collect_likes_of_user(username: str, n: int = 100) -> Json:
-    """ Collect n likes of the given user.
+# def collect_media_of_user(username: str, n: int = 100) -> Json:
+#     """ Collect n tweets of the given user with media.
 
-    Args:
-        username (str): username of the user.
-        n (int): maximum number of tweets, which should be collected. By default,
-        it's 100. If it's set to 0, collect all tweets.
+#     Args:
+#         username (str): username of the user.
+#         n (int): maximum number of tweets, which should be collected. By default,
+#         it's 100. If it's set to 0, collect all tweets.
 
-    Returns:
-        Json: tweet objects with media in json format.
-    """
-    return Tweets().model_dump(mode="json")
-
-
-def collect_tweet_with_id(id: str) -> Json:
-    """ Collect all information related to given tweet id.
-
-    Args:
-        id (str): username of the user.
-
-    Returns:
-        Json: detailed tweet object
-    """
-    return Tweet().model_dump(mode="json")
+#     Returns:
+#         Json: tweet objects with media in json format.
+#     """
+#     return Tweets().model_dump(mode="json")
 
 
-def collect_tweets_with_keyword(keyword: str, n: int = 100) -> Json:
-    """ Collect n tweets related to given keyword
+# def collect_likes_of_user(username: str, n: int = 100) -> Json:
+#     """ Collect n likes of the given user.
 
-    Args:
-        keyword (str): keyword
-        n (int): maximum number of tweets
+#     Args:
+#         username (str): username of the user.
+#         n (int): maximum number of tweets, which should be collected. By default,
+#         it's 100. If it's set to 0, collect all tweets.
 
-    Returns:
-        Json: tweet objects in json format.
-    """
-    return Tweets().model_dump(mode="json")
+#     Returns:
+#         Json: tweet objects with media in json format.
+#     """
+#     return Tweets().model_dump(mode="json")
 
 
-def collect_tweets_with_hashtag(hashtag: str, n: int = 100) -> Json:
-    """ Collect n tweets which include given hashtag
+# def collect_tweet_with_id(id: str) -> Json:
+#     """ Collect all information related to given tweet id.
 
-    Args:
-        hashtag (str): hashtag
-        n (int): maximum number of tweets
+#     Args:
+#         id (str): username of the user.
 
-    Returns:
-        Json: tweet objects in json format.
-    """
-    return Tweets().model_dump(mode="json")
+#     Returns:
+#         Json: detailed tweet object
+#     """
+#     return Tweet().model_dump(mode="json")
+
+
+# def collect_tweets_with_keyword(keyword: str, n: int = 100) -> Json:
+#     """ Collect n tweets related to given keyword
+
+#     Args:
+#         keyword (str): keyword
+#         n (int): maximum number of tweets
+
+#     Returns:
+#         Json: tweet objects in json format.
+#     """
+#     return Tweets().model_dump(mode="json")
+
+
+# def collect_tweets_with_hashtag(hashtag: str, n: int = 100) -> Json:
+#     """ Collect n tweets which include given hashtag
+
+#     Args:
+#         hashtag (str): hashtag
+#         n (int): maximum number of tweets
+
+#     Returns:
+#         Json: tweet objects in json format.
+#     """
+#     return Tweets().model_dump(mode="json")

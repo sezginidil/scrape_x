@@ -1,4 +1,3 @@
-from xmlrpc.client import DateTime
 from pydantic import BaseModel, Field
 from typing import List, Optional
 
@@ -60,26 +59,25 @@ class UserDetailedInfo(UserBasicInfo):
     number_of_following: int = Field(None)
     number_of_posts: int = Field(None)
 
-
-class BasicTweet(BaseModel):
-    date: DateTime = Field(None)
-    text: str = Field(..., description="Max 280 characters")
-    hashtags: Optional[str] = Field(..., description="Hastag in the url form")
-    image: Optional[str] = Field(..., description="Image url")
-    number_of_replies: int = Field(None)
-    number_of_reposts: int = Field(None)
-    number_of_likes: int = Field(None)
-    number_of_views: int = Field(None)
-    social_content: Optional[str] = Field(..., description="Link to retweeter")
-    replyting_to: Optional[str] = Field(..., description="Hastag in the url form")
-
-
-class Tweet(BaseModel):
-    quotes: Optional[BasicTweet] = Field(None)
-    replies: Optional[List[BasicTweet]] = Field(None)
-    reposts: Optional[List[UserBasicInfo]] = Field(None)
-    likes: Optional[List[UserBasicInfo]] = Field(None)
+# class BasicTweet(BaseModel):
+#     date: DateTime = Field(None)
+#     text: str = Field(..., description="Max 280 characters")
+#     hashtags: Optional[str] = Field(..., description="Hastag in the url form")
+#     image: Optional[str] = Field(..., description="Image url")
+#     number_of_replies: int = Field(None)
+#     number_of_reposts: int = Field(None)
+#     number_of_likes: int = Field(None)
+#     number_of_views: int = Field(None)
+#     social_content: Optional[str] = Field(..., description="Link to retweeter")
+#     replyting_to: Optional[str] = Field(..., description="Hastag in the url form")
 
 
-class Tweets(BaseModel):
-    tweets: List[BasicTweet] = Field(..., description="A list of tweets")
+# class Tweet(BaseModel):
+#     quotes: Optional[BasicTweet] = Field(None)
+#     replies: Optional[List[BasicTweet]] = Field(None)
+#     reposts: Optional[List[UserBasicInfo]] = Field(None)
+#     likes: Optional[List[UserBasicInfo]] = Field(None)
+
+
+# class Tweets(BaseModel):
+#     tweets: List[BasicTweet] = Field(..., description="A list of tweets")
