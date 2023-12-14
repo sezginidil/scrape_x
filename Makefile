@@ -1,4 +1,4 @@
-SOURCE_DIR = ./scrape_twitter
+SOURCE_DIR = ./scrape_x
 
 .PHONY: clean help
 
