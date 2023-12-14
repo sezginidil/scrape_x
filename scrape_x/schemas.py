@@ -89,7 +89,7 @@ class Tweets(BaseModel):
 
 class TweetWithInteraction(BaseModel):
     """All the information that can be collected with a tweet id"""
-    tweet: Tweet = Field(None),
+    tweet: Tweet = Field(None)
     quotes: Optional[Tweet] = Field(None, description="The original"
                                     "tweet which the given tweet quotes")
     replies: Optional[List[Tweet]] = Field(None, description="List of tweets which are"
