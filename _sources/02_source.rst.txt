@@ -15,6 +15,14 @@ scrape_x.collecting
     :members:
     :noindex:
 
+
+scrape_x.media
+---------------------
+
+.. automodule:: scrape_x.media
+    :members:
+    :noindex:
+
 schemas
 --------
 

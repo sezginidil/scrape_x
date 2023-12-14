@@ -77,7 +77,7 @@
   <h1>Source code for scrape_x.collecting</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Json</span>
 <span class="kn">from</span> <span class="nn">.schemas</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">Trends</span><span class="p">,</span> <span class="n">Users</span><span class="p">,</span> <span class="n">UserDetailedInfo</span><span class="p">,</span> <span class="n">Tweets</span><span class="p">,</span> <span class="n">Tweet</span>
+    <span class="n">Trends</span><span class="p">,</span> <span class="n">Users</span><span class="p">,</span> <span class="n">UserDetailedInfo</span><span class="p">,</span> <span class="n">Tweets</span><span class="p">,</span> <span class="n">TweetWithInteraction</span>
 <span class="p">)</span>
 
 
@@ -174,7 +174,7 @@
 
 
 <div class="viewcode-block" id="collect_likes_of_user"><a class="viewcode-back" href="../../02_source.html#scrape_x.collecting.collect_likes_of_user">[docs]</a><span class="k">def</span> <span class="nf">collect_likes_of_user</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Json</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Collect n likes of the given user.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Collect n tweets the given user has liked.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        username (str): username of the user.</span>
@@ -222,7 +222,7 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        Json: detailed tweet object</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">Tweet</span><span class="p">()</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">TweetWithInteraction</span><span class="p">()</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
