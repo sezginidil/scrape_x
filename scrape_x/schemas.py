@@ -59,12 +59,18 @@ class UserDetailedInfo(UserBasicInfo):
     number_of_posts: int = Field(None)
 
 
-class BasicTweet(BaseModel):
+class Tweet(BaseModel):
     """Basic tweet information that can be collected without going to the tweet's url."""
+    author: UserBasicInfo = Field(..., description="Basic information about the user who"
+                                  " has posted given tweet")
     date: str = Field(..., description="When the tweet was created, in string form",
                       examples=["9:02 PM · Sep 3, 2023"])
-    text: str = Field(..., description="Max 280 characters")
-    hashtags: Optional[str] = Field(..., description="Hastag in the url form")
+    text: str = Field(..., description="Max 280 characters"),
+    language: str = Field(..., description="Language of the tweet",
+                          examples=["Joined June 2015"]),
+    hashtags: Optional[List[str]] = Field(..., description="List of Hastag urls")
+    mentions: Optional[List[str]] = Field(..., description="List of user profile urls who"
+                                          " have been mentioned in the given tweet")
     image: Optional[str] = Field(..., description="Image url")
     number_of_replies: int = Field(None)
     number_of_reposts: int = Field(None)
@@ -72,16 +78,23 @@ class BasicTweet(BaseModel):
     number_of_views: int = Field(None)
     social_content: Optional[str] = Field(..., description="Link to retweeter")
     replyting_to: Optional[str] = Field(..., description="Link to replying user")
+    conversation_url: str = Field(..., description="Conversation url which contains"
+                                  "all replies"),
 
 
 class Tweets(BaseModel):
     """An aggregation class containing list of instances of `BasicTweet`."""
-    tweets: List[BasicTweet] = Field(..., description="A list of tweets")
+    tweets: List[Tweet] = Field(..., description="A list of tweets")
 
 
-class Tweet(BaseModel):
+class TweetWithInteraction(BaseModel):
     """All the information that can be collected with a tweet id"""
-    quotes: Optional[BasicTweet] = Field(None)
-    replies: Optional[List[BasicTweet]] = Field(None)
-    reposts: Optional[List[UserBasicInfo]] = Field(None)
-    likes: Optional[List[UserBasicInfo]] = Field(None)
+    tweet: Tweet = Field(None),
+    quotes: Optional[Tweet] = Field(None, description="The original"
+                                    "tweet which the given tweet quotes")
+    replies: Optional[List[Tweet]] = Field(None, description="List of tweets which are"
+                                           "replies of the given tweet")
+    reposters: Optional[List[UserBasicInfo]] = Field(None, description="List of users who have "
+                                                     "reposted the given tweet")
+    likers: Optional[List[UserBasicInfo]] = Field(None, description="List of users who have"
+                                                  "liked the given tweet")

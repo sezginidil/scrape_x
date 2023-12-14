@@ -1,6 +1,6 @@
 from pydantic import Json
 from .schemas import (
-    Trends, Users, UserDetailedInfo, Tweets, Tweet
+    Trends, Users, UserDetailedInfo, Tweets, TweetWithInteraction
 )
 
 
@@ -97,7 +97,7 @@ def collect_media_of_user(username: str, n: int = 100) -> Json:
 
 
 def collect_likes_of_user(username: str, n: int = 100) -> Json:
-    """ Collect n likes of the given user.
+    """ Collect n tweets the given user has liked.
 
     Args:
         username (str): username of the user.
@@ -145,4 +145,4 @@ def collect_tweet_with_id(id: str) -> Json:
     Returns:
         Json: detailed tweet object
     """
-    return Tweet().model_dump(mode="json")
+    return TweetWithInteraction().model_dump(mode="json")
