@@ -1,5 +1,5 @@
 ==============================================
-Welcome to the documentation of scrape_twitter!
+Welcome to the documentation of scrape_x!
 ==============================================
 
 Index

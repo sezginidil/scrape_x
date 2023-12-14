@@ -18,13 +18,13 @@ import importlib.metadata
 
 # -- Project information -----------------------------------------------------
 
-project = 'scrape_twitter'
+project = 'scrape_x'
 author = 'Idil Sezgin'
 copyright = '{}, {}'.format(datetime.datetime.now().year, author)
 
 
 # The short X.Y version
-version = importlib.metadata.version("scrape_twitter")
+version = importlib.metadata.version("scrape_x")
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -119,7 +119,7 @@ html_static_path = []
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'scrape_twitter_docs'
+htmlhelp_basename = 'scrape_x_docs'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -156,7 +156,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'scrape_twitter', project + ' Documentation', [author], 1)
+    (master_doc, 'scrape_x', project + ' Documentation', [author], 1)
 ]
 
 
@@ -167,7 +167,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, project, project + ' Documentation',
-     author, project, 'A python package for scraping Twitter',
+     author, project, 'A python package for scraping x',
      'Miscellaneous'),
 ]
 

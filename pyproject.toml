@@ -1,7 +1,7 @@
 [tool.poetry]
-name = 'scrape_twitter'
+name = 'scrape_x'
 version = "0.1.0"
-description = "A python package for scraping Twitter"
+description = "A python package for scraping X"
 authors = ["Idil Sezgin <idil.sezgin@tum.de>"]
 readme = "README.rst"
 license = "None"
@@ -10,7 +10,7 @@ documentation = "https://repository-hosting.com/example_project"
 keywords = []
 classifiers = []
 packages = [
-  {include = "scrape_twitter"}
+  {include = "scrape_x"}
 ]
 
 include = []
@@ -50,4 +50,4 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = ["tests"]
-addopts = "--verbose --doctest-modules --cov-report term-missing --cov=./scrape_twitter"
+addopts = "--verbose --doctest-modules --cov-report term-missing --cov=./scrape_x"

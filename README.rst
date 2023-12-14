@@ -1,4 +1,4 @@
-Scrape_Twitter
+Scrape_X
 ==============
 
 ..
@@ -93,7 +93,7 @@ Scrape_Twitter
 
 Introduction
 ------------
-A python package for scraping Twitter
+A python package for scraping X
 
 User Guide
 ----------
@@ -104,25 +104,25 @@ How to Install
 Stable release
 ``````````````
 
-To install Scrape_Twitter, run this command in your terminal:
+To install Scrape_X, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install scrape_twitter
+    $ pip install scrape_x
 
 or
 
 .. code-block:: console
 
-    $ poetry self add scrape_twitter
+    $ poetry self add scrape_x
 
-This is the preferred method to install Scrape_Twitter, as it will always install the most recent stable release.
+This is the preferred method to install Scrape_X, as it will always install the most recent stable release.
 
 
 From sources
 ````````````
 
-The sources for Scrape_Twitter can be downloaded from the `Github repo <https://repository-hosting.com/example_project>`_.
+The sources for Scrape_X can be downloaded from the `Github repo <https://repository-hosting.com/example_project>`_.
 
 You can either clone the public repository:
 
@@ -145,9 +145,9 @@ or
 How to Use
 ++++++++++
 
-To use Scrape_Twitter in a project::
+To use Scrape_X in a project::
 
-    import scrape_twitter
+    import scrape_x
 
 Maintainers
 -----------
@@ -156,4 +156,4 @@ Maintainers
     TODO: List here the people responsible for the development and maintaining of this project.
     Format: **Name** - *Role/Responsibility* - Email
 
-* **Idil Sezgin** - *Maintainer* - `idil.sezgin@tum.de <mailto:idil.sezgin@tum.de?subject=[GitHub]Scrape_Twitter>`_
+* **Idil Sezgin** - *Maintainer* - `idil.sezgin@tum.de <mailto:idil.sezgin@tum.de?subject=[GitHub]Scrape_X>`_
