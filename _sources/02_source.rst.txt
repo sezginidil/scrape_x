@@ -1,43 +1,43 @@
 Source
 ======
 
-scrape_twitter.login
+scrape_x.login
 ---------------------
 
-.. automodule:: scrape_twitter.login
+.. automodule:: scrape_x.login
     :members:
     :noindex:
 
-scrape_twitter.collecting
+scrape_x.collecting
 ---------------------
 
-.. automodule:: scrape_twitter.collecting
+.. automodule:: scrape_x.collecting
     :members:
     :noindex:
 
 schemas
 --------
 
-.. autopydantic_model:: scrape_twitter.schemas.Trend
+.. autopydantic_model:: scrape_x.schemas.Trend
     :inherited-members: BaseModel
 
-.. autopydantic_model:: scrape_twitter.schemas.Trends
+.. autopydantic_model:: scrape_x.schemas.Trends
 
-.. autopydantic_model:: scrape_twitter.schemas.UserBasicInfo
+.. autopydantic_model:: scrape_x.schemas.UserBasicInfo
     :inherited-members: BaseModel
 
-.. autopydantic_model:: scrape_twitter.schemas.Users
+.. autopydantic_model:: scrape_x.schemas.Users
 
-.. autopydantic_model:: scrape_twitter.schemas.UserDetailedInfo
+.. autopydantic_model:: scrape_x.schemas.UserDetailedInfo
     :inherited-members: BaseModel
 
-.. autopydantic_model:: scrape_twitter.schemas.BasicTweet
+.. autopydantic_model:: scrape_x.schemas.BasicTweet
     :inherited-members: BaseModel
 
-.. autopydantic_model:: scrape_twitter.schemas.Tweet
+.. autopydantic_model:: scrape_x.schemas.Tweet
     :inherited-members: BaseModel
 
-.. autopydantic_model:: scrape_twitter.schemas.Tweets
+.. autopydantic_model:: scrape_x.schemas.Tweets
 
 
 
