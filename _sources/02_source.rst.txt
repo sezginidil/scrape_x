@@ -39,13 +39,15 @@ schemas
 .. autopydantic_model:: scrape_x.schemas.UserDetailedInfo
     :inherited-members: BaseModel
 
-.. autopydantic_model:: scrape_x.schemas.BasicTweet
-    :inherited-members: BaseModel
-
 .. autopydantic_model:: scrape_x.schemas.Tweet
     :inherited-members: BaseModel
 
 .. autopydantic_model:: scrape_x.schemas.Tweets
+
+.. autopydantic_model:: scrape_x.schemas.TweetWithInteraction
+    :inherited-members: BaseModel
+
+
 
 
 
