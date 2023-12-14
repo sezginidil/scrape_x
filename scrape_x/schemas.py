@@ -65,9 +65,9 @@ class Tweet(BaseModel):
                                   " has posted given tweet")
     date: str = Field(..., description="When the tweet was created, in string form",
                       examples=["9:02 PM · Sep 3, 2023"])
-    text: str = Field(..., description="Max 280 characters"),
+    text: str = Field(..., description="Max 280 characters")
     language: str = Field(..., description="Language of the tweet",
-                          examples=["Joined June 2015"]),
+                          examples=["Joined June 2015"])
     hashtags: Optional[List[str]] = Field(..., description="List of Hastag urls")
     mentions: Optional[List[str]] = Field(..., description="List of user profile urls who"
                                           " have been mentioned in the given tweet")
@@ -79,7 +79,7 @@ class Tweet(BaseModel):
     social_content: Optional[str] = Field(..., description="Link to retweeter")
     replyting_to: Optional[str] = Field(..., description="Link to replying user")
     conversation_url: str = Field(..., description="Conversation url which contains"
-                                  "all replies"),
+                                  " all replies")
 
 
 class Tweets(BaseModel):
