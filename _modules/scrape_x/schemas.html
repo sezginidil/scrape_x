@@ -80,7 +80,10 @@
 
 
 <div class="viewcode-block" id="Trend"><a class="viewcode-back" href="../../02_source.html#scrape_x.schemas.Trend">[docs]</a><span class="k">class</span> <span class="nc">Trend</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; Trend object &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Trend object . Trends are shown based on user&#39;s location</span>
+<span class="sd">    likes and history. Sometimes it is category based and sometimes</span>
+<span class="sd">    is location based. Header and title is always there, and some cases</span>
+<span class="sd">    we also have the number of posts about that trend.&quot;&quot;&quot;</span>
     <span class="n">header</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span>
                         <span class="n">description</span><span class="o">=</span><span class="s2">&quot;category or location based&quot;</span><span class="p">,</span>
                         <span class="n">examples</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Trending in (location)&quot;</span><span class="p">,</span> <span class="s2">&quot;(category) · Trending&quot;</span><span class="p">])</span>
@@ -153,22 +156,20 @@
     <span class="n">number_of_reposts</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">number_of_likes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">number_of_views</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-    <span class="n">social_content</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Link to retweeter&quot;</span><span class="p">)</span>
     <span class="n">replyting_to</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Link to replying user&quot;</span><span class="p">)</span>
-    <span class="n">conversation_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Conversation url which contains&quot;</span>
-                                  <span class="s2">&quot; all replies&quot;</span><span class="p">)</span></div>
+    <span class="n">conversation_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Conversation id&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Tweets"><a class="viewcode-back" href="../../02_source.html#scrape_x.schemas.Tweets">[docs]</a><span class="k">class</span> <span class="nc">Tweets</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation class containing list of instances of `BasicTweet`.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An aggregation class containing list of instances of `Tweet`.&quot;&quot;&quot;</span>
     <span class="n">tweets</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tweet</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;A list of tweets&quot;</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="TweetWithInteraction"><a class="viewcode-back" href="../../02_source.html#scrape_x.schemas.TweetWithInteraction">[docs]</a><span class="k">class</span> <span class="nc">TweetWithInteraction</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;All the information that can be collected with a tweet id&quot;&quot;&quot;</span>
     <span class="n">tweet</span><span class="p">:</span> <span class="n">Tweet</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-    <span class="n">quotes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tweet</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The original&quot;</span>
-                                    <span class="s2">&quot;tweet which the given tweet quotes&quot;</span><span class="p">)</span>
+    <span class="n">quote</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tweet</span><span class="p">]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;The original&quot;</span>
+                                   <span class="s2">&quot;tweet which the given tweet quotes&quot;</span><span class="p">)</span>
     <span class="n">replies</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Tweet</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;List of tweets which are&quot;</span>
                                            <span class="s2">&quot;replies of the given tweet&quot;</span><span class="p">)</span>
     <span class="n">reposters</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">UserBasicInfo</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;List of users who have &quot;</span>
