@@ -3,7 +3,10 @@ from typing import List, Optional
 
 
 class Trend(BaseModel):
-    """ Trend object """
+    """ Trend object . Trends are shown based on user's location
+    likes and history. Sometimes it is category based and sometimes
+    is location based. Header and title is always there, and some cases
+    we also have the number of posts about that trend."""
     header: str = Field(...,
                         description="category or location based",
                         examples=["Trending in (location)", "(category) · Trending"])
@@ -76,22 +79,20 @@ class Tweet(BaseModel):
     number_of_reposts: int = Field(None)
     number_of_likes: int = Field(None)
     number_of_views: int = Field(None)
-    social_content: Optional[str] = Field(..., description="Link to retweeter")
     replyting_to: Optional[str] = Field(..., description="Link to replying user")
-    conversation_url: str = Field(..., description="Conversation url which contains"
-                                  " all replies")
+    conversation_id: str = Field(..., description="Conversation id")
 
 
 class Tweets(BaseModel):
-    """An aggregation class containing list of instances of `BasicTweet`."""
+    """An aggregation class containing list of instances of `Tweet`."""
     tweets: List[Tweet] = Field(..., description="A list of tweets")
 
 
 class TweetWithInteraction(BaseModel):
     """All the information that can be collected with a tweet id"""
     tweet: Tweet = Field(None)
-    quotes: Optional[Tweet] = Field(None, description="The original"
-                                    "tweet which the given tweet quotes")
+    quote: Optional[Tweet] = Field(None, description="The original"
+                                   "tweet which the given tweet quotes")
     replies: Optional[List[Tweet]] = Field(None, description="List of tweets which are"
                                            "replies of the given tweet")
     reposters: Optional[List[UserBasicInfo]] = Field(None, description="List of users who have "

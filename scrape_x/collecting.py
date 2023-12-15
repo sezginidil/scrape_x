@@ -68,30 +68,17 @@ def collect_user_info(username: str) -> Json:
     return UserDetailedInfo().model_dump(mode="json")
 
 
-def collect_tweets_of_user(username: str, n: int = 100) -> Json:
+def collect_tweets_of_user(username: str, withOnlyMedia: bool, n: int = 100) -> Json:
     """ Collect n tweets of the given user.
 
     Args:
         username (str): username of the user.
+        withOnlyMedia (bool): when true, only tweets with media are collected
         n (int): maximum number of tweets, which should be collected. By default,
          it's 100. If it's set to 0, collect all tweets.
 
     Returns:
         Json: tweet objects in json format.
-    """
-    return Tweets().model_dump(mode="json")
-
-
-def collect_media_of_user(username: str, n: int = 100) -> Json:
-    """ Collect n tweets of the given user with media.
-
-    Args:
-        username (str): username of the user.
-        n (int): maximum number of tweets, which should be collected. By default,
-         it's 100. If it's set to 0, collect all tweets.
-
-    Returns:
-        Json: tweet objects with media in json format.
     """
     return Tweets().model_dump(mode="json")
 
