@@ -1,6 +1,6 @@
 from pydantic import Json
 from .schemas import (
-    Trends, Users, UserDetailedInfo, Tweets, TweetWithInteraction
+    Trends, Users, UserDetailedInfo, Tweets, TweetDetails
 )
 
 
@@ -123,7 +123,7 @@ def collect_tweets_with_hashtag(hashtag: str, n: int = 100) -> Json:
     return Tweets().model_dump(mode="json")
 
 
-def collect_tweet_with_id(id: str) -> Json:
+def collect_tweet_details(id: str) -> Json:
     """ Collect all information related to given tweet id.
 
     Args:
@@ -132,4 +132,4 @@ def collect_tweet_with_id(id: str) -> Json:
     Returns:
         Json: detailed tweet object
     """
-    return TweetWithInteraction().model_dump(mode="json")
+    return TweetDetails().model_dump(mode="json")

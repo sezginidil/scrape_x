@@ -62,7 +62,7 @@ class UserDetailedInfo(UserBasicInfo):
     number_of_posts: int = Field(None)
 
 
-class Tweet(BaseModel):
+class BasicTweetInfo(BaseModel):
     """Basic tweet information that can be collected without going to the tweet's url."""
     author: UserBasicInfo = Field(..., description="Basic information about the user who"
                                   " has posted given tweet")
@@ -85,16 +85,16 @@ class Tweet(BaseModel):
 
 class Tweets(BaseModel):
     """An aggregation class containing list of instances of `Tweet`."""
-    tweets: List[Tweet] = Field(..., description="A list of tweets")
+    tweets: List[BasicTweetInfo] = Field(..., description="A list of tweets")
 
 
-class TweetWithInteraction(BaseModel):
+class TweetDetails(BaseModel):
     """All the information that can be collected with a tweet id"""
-    tweet: Tweet = Field(None)
-    quote: Optional[Tweet] = Field(None, description="The original"
-                                   "tweet which the given tweet quotes")
-    replies: Optional[List[Tweet]] = Field(None, description="List of tweets which are"
-                                           "replies of the given tweet")
+    basic_tweet_info: BasicTweetInfo = Field(None)
+    quote: Optional[BasicTweetInfo] = Field(None, description="The original"
+                                            "tweet which the given tweet quotes")
+    replies: Optional[List[BasicTweetInfo]] = Field(None, description="List of tweets which are"
+                                                    "replies of the given tweet")
     reposters: Optional[List[UserBasicInfo]] = Field(None, description="List of users who have "
                                                      "reposted the given tweet")
     likers: Optional[List[UserBasicInfo]] = Field(None, description="List of users who have"
